@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { siteData } from "../../data/site";
+
+const s = siteData.blog;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-grid">
+        {s.articles.map((article) => (
+          <a class="article-card" href={`/blog/${article.slug}`}>
+            <p class="eyebrow" style="margin-bottom:0">{article.category}</p>
+            <h3>{article.title}</h3>
+            <p>{article.description}</p>
+            <div class="article-card-meta">
+              <span>{article.date}</span>
+            </div>
+            <span class="article-card-link">Citește articolul →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,75 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteData } from "../data/site";
+
+const s = siteData.about;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">Misiune</p>
+        <h2>{s.missionTitle}</h2>
+        <span class="title-underline"></span>
+        <p class="section-copy" style="margin-top:20px">{s.missionText}</p>
+      </div>
+
+      <div>
+        <p class="section-label">Ce ne diferențiază</p>
+        <h2>{s.valuesTitle}</h2>
+        <span class="title-underline"></span>
+        <ul class="feature-list" style="margin-top:20px">
+          {s.values.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Soluții</p>
+        <h2>Domenii de expertiză</h2>
+      </div>
+
+      <div class="applications-grid">
+        {[
+          { label: "Stații ape uzate", href: "/ape-uzate" },
+          { label: "Ridicare presiune", href: "/ridicare-presiune" },
+          { label: "Anti-incendiu EN12845", href: "/anti-incendiu" },
+          { label: "Containerizat", href: "/containerizat" }
+        ].map((item) => (
+          <a class="mini-card" href={item.href}>
+            <span class="mini-card-icon" aria-hidden="true"></span>
+            <strong>{item.label}</strong>
+            <span class="mini-card-link">Vezi detalii →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>Discută cu echipa noastră</h2>
+          <p class="cta-copy">Suntem disponibili pentru orice întrebare legată de proiectul tău.</p>
+        </div>
+        <a class="button button-primary" href="/contact">Contactează-ne</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,44 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { siteData } from "../data/site";
+
+const s = siteData.contact;
+const site = siteData.site;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container contact-grid">
+      <div class="contact-rail">
+        <div class="contact-note">
+          <p class="footer-label">{s.labels.email}</p>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </div>
+
+        <div class="contact-note">
+          <p class="footer-label">{s.labels.phone}</p>
+          <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
+        </div>
+
+        {site.address && (
+          <div class="contact-note">
+            <p class="footer-label">Adresă</p>
+            <p>{site.address}</p>
+          </div>
+        )}
+      </div>
+
+      <ContactForm />
+    </div>
+  </section>
+</MainLayout>

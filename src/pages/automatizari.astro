@@ -1,0 +1,86 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteData } from "../data/site";
+
+const s = siteData.automation;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="tech-img-frame tech-img-frame--wide">
+        <img src="/images/BMS.jpg" alt="Sistem BMS și automatizare industrială ITEM Engineering" class="tech-img" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">SCADA</p>
+        <h2>{s.scadaTitle}</h2>
+        <span class="title-underline"></span>
+        <p class="section-copy" style="margin-top:20px">{s.scadaBody}</p>
+      </div>
+
+      <div>
+        <p class="section-label">Monitorizare la distanță</p>
+        <h2>{s.remoteTitle}</h2>
+        <span class="title-underline"></span>
+        <ul class="feature-list" style="margin-top:20px">
+          {s.remoteItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">BMS</p>
+        <h2>{s.bmsTitle}</h2>
+        <span class="title-underline"></span>
+        <p class="section-copy" style="margin-top:20px">{s.bmsBody}</p>
+        <ul class="feature-list" style="margin-top:16px">
+          {s.bmsItems.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <p class="section-label">Avantaje</p>
+        <h2>{s.benefitsTitle}</h2>
+        <span class="title-underline"></span>
+        <ul class="feature-list" style="margin-top:20px">
+          {s.benefits.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>{s.ctaTitle}</h2>
+          <p class="cta-copy">{s.ctaBody}</p>
+        </div>
+        <a class="button button-primary" href="/contact">{s.ctaButton}</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

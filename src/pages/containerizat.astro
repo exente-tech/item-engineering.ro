@@ -1,0 +1,109 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteData } from "../data/site";
+
+const s = siteData.container;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Aplicații</p>
+        <h2>{s.configurationsTitle}</h2>
+      </div>
+
+      <div class="card-grid two">
+        {s.configurations.map((item) => (
+          <article class="card">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container split-grid">
+      <div class="tech-img-frame">
+        <img src="/images/statii-de-ridicare-presiune-containerizate-1.png" alt="Stație containerizată — plan vedere de sus" class="tech-img" />
+      </div>
+      <div class="tech-img-frame">
+        <img src="/images/statii-de-ridicare-presiune-containerizate-2.png" alt="Stație containerizată — secțiune laterală" class="tech-img" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">Caracteristici</p>
+        <h2>{s.highlightsTitle}</h2>
+        <span class="title-underline"></span>
+      </div>
+
+      <div class="highlights-grid">
+        {s.highlights.map((item) => (
+          <div class="highlight-item">
+            <span class="highlight-dot" aria-hidden="true"></span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">Avantaje</p>
+        <h2>{s.benefitsTitle}</h2>
+        <span class="title-underline"></span>
+      </div>
+
+      <ul class="feature-list" style="margin-top:8px">
+        {s.benefits.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">Tehnic</p>
+        <h2>{s.techTitle}</h2>
+        <span class="title-underline"></span>
+      </div>
+
+      <ul class="feature-list" style="margin-top:8px">
+        {s.tech.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>Ai nevoie de o soluție containerizată?</h2>
+          <p class="cta-copy">Livrăm sisteme complete, gata de instalare.</p>
+        </div>
+        <a class="button button-primary" href="/contact">{s.ctaButton}</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

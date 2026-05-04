@@ -1,0 +1,112 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteData } from "../data/site";
+
+const home = siteData.home;
+---
+
+<MainLayout title={home.title} description={home.description}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">{home.eyebrow}</p>
+        <h1>{home.headline}</h1>
+        <p class="hero-copy">{home.intro}</p>
+        <p class="trust-line">{home.trustLine}</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/contact">{home.primaryCta}</a>
+          <a class="button button-secondary" href="/sisteme-de-pompare">{home.secondaryCta}</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="hero-img-frame">
+          <img
+            src="/images/grupuri-1.png"
+            alt="Grupuri de pompare ITEM Engineering"
+            class="hero-img"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container">
+      <div class="positioning-block">
+        <p class="section-label">Soluții complete</p>
+        <h2>{home.valuePropTitle}</h2>
+        <span class="title-underline"></span>
+        <p class="section-copy" style="margin-top:20px">{home.valuePropBody}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Cum funcționează</p>
+        <h2>{home.howItWorksTitle}</h2>
+      </div>
+
+      <div class="components-grid">
+        {home.howItWorksItems.map((item, i) => (
+          <article class="component-card">
+            <span class="component-card-number">{i + 1}</span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Aplicații</p>
+        <h2>{home.applicationsTitle}</h2>
+      </div>
+
+      <div class="applications-grid">
+        {home.applications.map((item) => (
+          <a class="mini-card" href={item.href}>
+            <span class="mini-card-icon" aria-hidden="true"></span>
+            <strong>{item.label}</strong>
+            <span class="mini-card-link">Vezi detalii →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Avantaje</p>
+        <h2>{home.whyTitle}</h2>
+      </div>
+
+      <div class="value-grid">
+        {home.whyItems.map((item) => (
+          <article class="mini-card mini-card-advantage">
+            <span class="mini-card-icon" aria-hidden="true"></span>
+            <strong>{item}</strong>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>{home.ctaTitle}</h2>
+          <p class="cta-copy">{home.ctaBody}</p>
+        </div>
+        <a class="button button-primary" href="/contact">{home.ctaButton}</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,118 @@
+---
+import "../styles/global.css";
+import { siteData } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const path = Astro.url.pathname;
+const site = siteData.site;
+const canonicalUrl = new URL(path, `${site.url}/`).toString();
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={`${title} | ${site.name}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ro_RO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | ${site.name}`} />
+    <meta name="twitter:description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title} | {site.name}</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": site.name,
+      "url": site.url,
+      "email": site.email,
+      "telephone": site.phone,
+      "address": site.address ? { "@type": "PostalAddress", "addressCountry": "RO", "streetAddress": site.address } : undefined,
+      "description": "Sisteme industriale complete de pompare și automatizare: ape uzate, ridicare presiune, anti-incendiu, containerizat, SCADA.",
+      "areaServed": "RO",
+      "knowsLanguage": "ro",
+      "sameAs": []
+    })} />
+  </head>
+  <body>
+    <div class="page-frame">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="/">
+            <span class="brand-icon" aria-hidden="true">
+              <span class="brand-dot"></span>
+              <span class="brand-dot"></span>
+              <span class="brand-dot"></span>
+            </span>
+            <span class="brand-name">ITEM <span>Engineering</span></span>
+          </a>
+
+          <nav class="nav" aria-label="Principal">
+            {siteData.navigation.map((item) => (
+              <a class:list={["nav-link", path === item.href && "is-active"]} href={item.href}>
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <a class="button button-primary header-cta" href="/contact">Solicită ofertă</a>
+        </div>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <div class="footer-brand">
+              <span class="brand-icon" aria-hidden="true">
+                <span class="brand-dot"></span>
+                <span class="brand-dot"></span>
+                <span class="brand-dot"></span>
+              </span>
+              <span class="footer-brand-name">ITEM <span>Engineering</span></span>
+            </div>
+            <h2>{siteData.footer.heading}</h2>
+            <p class="footer-copy">{siteData.footer.summary}</p>
+          </div>
+
+          <div>
+            <p class="footer-label">{siteData.footer.quickLinksHeading}</p>
+            {siteData.navigation.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))}
+          </div>
+
+          <div>
+            <p class="footer-label">{siteData.footer.contactHeading}</p>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
+            {site.address && <p>{site.address}</p>}
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <p>&copy; 2026 {site.name}. {siteData.footer.copyright}</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

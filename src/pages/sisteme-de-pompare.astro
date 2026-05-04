@@ -1,0 +1,99 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteData } from "../data/site";
+
+const s = siteData.systems;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container split-grid" style="align-items:center">
+      <div class="tech-img-frame">
+        <img src="/images/grupuri-1.png" alt="Grupuri de pompare — desene tehnice" class="tech-img" />
+      </div>
+      <div class="tech-img-frame">
+        <img src="/images/grupuri-2.png" alt="Grupuri de pompare — configurații" class="tech-img" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Componente</p>
+        <h2>{s.componentsTitle}</h2>
+      </div>
+
+      <div class="components-grid">
+        {s.components.map((item, i) => (
+          <article class="component-card">
+            <span class="component-card-number">{i + 1}</span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container split-grid">
+      <div>
+        <p class="section-label">Avantaje</p>
+        <h2>{s.benefitsTitle}</h2>
+        <span class="title-underline"></span>
+      </div>
+
+      <ul class="feature-list" style="margin-top:8px">
+        {s.benefits.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-band">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Tipuri de sisteme</p>
+        <h2>Soluții pentru fiecare aplicație</h2>
+      </div>
+
+      <div class="card-grid two">
+        {[
+          { title: "Stații de pompare ape uzate", body: "Sisteme pentru transportul eficient al apei uzate în rețele urbane și industriale.", href: "/ape-uzate" },
+          { title: "Stații de ridicare presiune", body: "Sisteme dedicate menținerii presiunii constante în rețele de distribuție.", href: "/ridicare-presiune" },
+          { title: "Grupuri anti-incendiu EN12845", body: "Soluții conforme standardelor pentru alimentarea sistemelor de stingere incendiu.", href: "/anti-incendiu" },
+          { title: "Stații containerizate", body: "Soluții livrate în containere prefabricate, pregătite pentru instalare rapidă.", href: "/containerizat" }
+        ].map((item) => (
+          <a class="card" href={item.href}>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+            <span class="card-link">Vezi detalii →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>{s.ctaTitle}</h2>
+          <p class="cta-copy">{s.ctaBody}</p>
+        </div>
+        <a class="button button-primary" href="/contact">{s.ctaButton}</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

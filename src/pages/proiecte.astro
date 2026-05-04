@@ -1,0 +1,79 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { siteData } from "../data/site";
+
+const s = siteData.projects;
+---
+
+<MainLayout title={s.title} description={s.description}>
+  <section class="page-hero section">
+    <div class="container">
+      <p class="eyebrow">{s.eyebrow}</p>
+      <h1>{s.heading}</h1>
+      <span class="title-underline"></span>
+      <p class="page-copy" style="margin-top:20px">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-label">Portofoliu</p>
+        <h2>Proiecte reprezentative</h2>
+      </div>
+
+      <div class="card-grid two">
+        {[
+          {
+            label: "Ape uzate",
+            title: "Stație de pompare ape uzate — aplicație industrială",
+            challenge: "Transport eficient al apei uzate industriale cu variații mari de debit.",
+            solution: "Sistem WW cu automatizare completă și monitorizare SCADA.",
+            result: "Funcționare continuă, reducere intervenții de mentenanță cu 60%."
+          },
+          {
+            label: "Ridicare presiune",
+            title: "Stație de ridicare presiune — rețea de distribuție",
+            challenge: "Menținerea presiunii constante la variații mari de consum.",
+            solution: "Grup de pompare cu invertor de frecvență și PLC integrat.",
+            result: "Presiune stabilizată, consum energetic redus cu 30%."
+          },
+          {
+            label: "Anti-incendiu",
+            title: "Grup de pompare incendiu EN12845 — complex industrial",
+            challenge: "Conformitate EN12845 și funcționare garantată în situații critice.",
+            solution: "Configurație electrică + diesel cu testare automată periodică.",
+            result: "Certificare completă EN12845, disponibilitate 99.9%."
+          },
+          {
+            label: "Containerizat",
+            title: "Stație containerizată — implementare rapidă",
+            challenge: "Instalare în termen scurt, fără lucrări de construcție majore.",
+            solution: "Container complet echipat cu SCADA integrat, livrat gata de funcționare.",
+            result: "Instalare în 3 zile față de 3 săptămâni estimat inițial."
+          }
+        ].map((project) => (
+          <article class="card">
+            <p class="eyebrow" style="margin-bottom:8px">{project.label}</p>
+            <h3>{project.title}</h3>
+            <p><strong style="color:var(--primary)">Provocare:</strong> {project.challenge}</p>
+            <p><strong style="color:var(--primary)">Soluție:</strong> {project.solution}</p>
+            <p><strong style="color:var(--accent)">Rezultat:</strong> {project.result}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-banner-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div>
+          <h2>Ai un proiect similar?</h2>
+          <p class="cta-copy">Contactează-ne pentru o soluție adaptată cerințelor tale tehnice.</p>
+        </div>
+        <a class="button button-primary" href="/contact">Solicită ofertă</a>
+      </div>
+    </div>
+  </section>
+</MainLayout>
