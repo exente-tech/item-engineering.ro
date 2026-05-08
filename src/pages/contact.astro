@@ -33,7 +33,10 @@ const site = siteData.site;
         {site.address && (
           <div class="contact-note">
             <p class="footer-label">Adresă</p>
-            <p>{site.address}</p>
+            <address style="font-style:normal">
+              <span>{site.address}</span><br />
+              <span>{site.addressCity}</span>
+            </address>
           </div>
         )}
       </div>

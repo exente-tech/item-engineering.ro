@@ -4,7 +4,8 @@ export const siteData = {
     url: "https://www.item-engineering.ro",
     email: "office@item-engineering.ro",
     phone: "021 539 1786",
-    address: "",
+    address: "Str. Biharia 67-77, Metav Business Park, Corp H",
+    addressCity: "București, Sect. 1",
     formEndpoint: "",
     tenantName: "item-engineering-ro"
   },

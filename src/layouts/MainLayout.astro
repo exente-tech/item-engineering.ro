@@ -47,7 +47,7 @@ const resolvedOgImage = ogImage ?? `${site.url}/images/grupuri-2.png`;
       "url": site.url,
       "email": site.email,
       "telephone": site.phone,
-      "address": site.address ? { "@type": "PostalAddress", "addressCountry": "RO", "streetAddress": site.address } : undefined,
+      "address": site.address ? { "@type": "PostalAddress", "streetAddress": site.address, "addressLocality": "București", "addressRegion": "Sector 1", "addressCountry": "RO" } : undefined,
       "description": "Sisteme industriale complete de pompare și automatizare: ape uzate, ridicare presiune, anti-incendiu, containerizat, SCADA.",
       "areaServed": "RO",
       "knowsLanguage": "ro",
@@ -109,7 +109,7 @@ const resolvedOgImage = ogImage ?? `${site.url}/images/grupuri-2.png`;
             <p class="footer-label">{siteData.footer.contactHeading}</p>
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>{site.phone}</a>
-            {site.address && <p>{site.address}</p>}
+            {site.address && <><p>{site.address}</p><p>{site.addressCity}</p></>}
           </div>
         </div>
 
