@@ -1,0 +1,134 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Mentenanța stației de pompare: ce trebuie verificat și la ce intervale",
+  description: "Ghid practic de mentenanță preventivă pentru stații de pompare: verificări zilnice, lunare și anuale, semne de uzură și rolul automatizării în reducerea intervențiilor.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/mentenanta-statie-pompare`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Mentenanță
+      </nav>
+      <p class="eyebrow">Mentenanță</p>
+      <h1 style="max-width:28ch">Mentenanța stației de pompare: ce trebuie verificat și la ce intervale</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          O stație de pompare proiectată corect și echipată cu automatizare modernă necesită mentenanță redusă — dar nu zero. Mentenanța preventivă este întotdeauna mai ieftină decât reparația de urgență, mai ales când o avarie înseamnă întreruperea funcționării rețelei de canalizare, a sistemului anti-incendiu sau a alimentării cu apă.
+        </p>
+        <p>
+          Iată un ghid practic organizat pe intervale, adaptat pentru stații de pompare cu automatizare.
+        </p>
+
+        <h2>De ce este importantă mentenanța preventivă?</h2>
+        <p>
+          Pompele submersibile și centrifugale sunt echipamente robuste, dar se uzează în timp. Garniturile se deteriorează, rulmenții se uzează, rotoarele se pot eroda în contactul cu apă uzată sau cu impurități. Detectarea timpurie a uzurii evită avariile majore și menține eficiența energetică.
+        </p>
+        <p>
+          Sistemele cu SCADA fac această detectare mai ușoară — dar chiar și fără SCADA, o rutină clară de verificare face diferența.
+        </p>
+
+        <h2>Verificări săptămânale</h2>
+        <ul>
+          <li>Verificarea vizuală a stației — prezența apei în cămin (altfel decât normal), mirosuri neobișnuite, zgomote</li>
+          <li>Citirea parametrilor de pe tabloul de comandă — presiune, nivel, alarme active</li>
+          <li>Verificarea funcționării pompelor în modul manual, pe rând</li>
+          <li>Controlul rezervorului de combustibil (pentru stații diesel)</li>
+        </ul>
+
+        <h2>Verificări lunare</h2>
+        <ul>
+          <li>Testarea comutării automate între pompe (dacă există pompă de rezervă)</li>
+          <li>Verificarea senzorilor de nivel — flotoare sau sonde ultrasonice</li>
+          <li>Verificarea etanșeității conductelor și racordurilor vizibile</li>
+          <li>Controlul bateriei de backup a tabloului de comandă</li>
+          <li>Testarea alarmelor și a sistemului de notificare GSM/SCADA</li>
+          <li>Curățarea grilajelor și filtrelor (pentru stații SSWW)</li>
+        </ul>
+
+        <h2>Verificări anuale</h2>
+        <ul>
+          <li><strong>Revizia completă a pompelor</strong> — verificarea garniturilor mecanice, a rulmenților și a rotorului</li>
+          <li>Măsurarea curentului absorbit și compararea cu valorile din cartea tehnică — o creștere semnificativă indică uzură</li>
+          <li>Verificarea și calibrarea senzorilor de presiune și debit</li>
+          <li>Inspecția interioară a căminului — coroziune, fisuri, infiltrații</li>
+          <li>Verificarea completă a tabloului de comandă — contactoare, siguranțe, conexiuni</li>
+          <li>Testarea funcțiilor de protecție ale invertoarelor de frecvență</li>
+          <li>Actualizarea jurnalului de mentenanță</li>
+        </ul>
+
+        <h2>Semne că o pompă are nevoie de intervenție</h2>
+        <ul>
+          <li>Zgomot neobișnuit (vibrații, trepidații, cavitație)</li>
+          <li>Curent absorbit mai mare decât valorile nominale</li>
+          <li>Debit redus la aceeași turație</li>
+          <li>Temperatura motorului crescută</li>
+          <li>Scurgeri la garnitura mecanică</li>
+          <li>Porniri frecvente fără a atinge parametrii normali</li>
+        </ul>
+
+        <h2>Rolul automatizării în reducerea mentenanței</h2>
+        <p>
+          Un sistem cu SCADA sau chiar cu monitorizare GSM de bază reduce semnificativ efortul de mentenanță prin:
+        </p>
+        <ul>
+          <li>Alarmare imediată la orice parametru în afara limitelor normale</li>
+          <li>Înregistrarea orelor de funcționare per pompă — baza unui plan de mentenanță predictiv</li>
+          <li>Detectarea automată a funcționării pe gol sau a blocajelor</li>
+          <li>Alternarea automată a pompelor pentru uzură egală</li>
+        </ul>
+        <p>
+          Stațiile livrate de ITEM Engineering includ contorizarea orelor de funcționare și protecții automate ca standard, chiar și fără SCADA complet.
+        </p>
+
+        <div class="article-cta">
+          <p><strong>Ai o stație de pompare care necesită revizie sau modernizare?</strong></p>
+          <p>Contactează echipa ITEM Engineering pentru o evaluare tehnică și o soluție de mentenanță adaptată.</p>
+          <a class="button button-primary" href="/contact">Contactează un inginer</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

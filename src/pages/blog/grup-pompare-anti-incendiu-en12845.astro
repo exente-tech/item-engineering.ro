@@ -1,0 +1,142 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Grup de pompare anti-incendiu EN12845: cum alegi configurația potrivită",
+  description: "Ghid complet pentru alegerea grupului de pompare anti-incendiu conform EN12845: configurații electrice, diesel și combinate, componente obligatorii și criterii de selecție.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/grup-pompare-anti-incendiu-en12845`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Anti-incendiu
+      </nav>
+      <p class="eyebrow">Anti-incendiu</p>
+      <h1 style="max-width:28ch">Grup de pompare anti-incendiu EN12845: cum alegi configurația potrivită</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          Un sistem de stingere a incendiilor — fie că vorbim de sprinklere, hidranți interiori sau alte instalații de tip deluge — depinde în totalitate de grupul de pompare. Acesta trebuie să furnizeze debitul și presiunea necesare exact în momentul critic, indiferent de condițiile externe.
+        </p>
+        <p>
+          Standardul european EN12845 definește cerințele minime pentru proiectarea, instalarea și mentenanța sistemelor fixe de stingere cu apă. Conformitatea cu acest standard nu este opțională în majoritatea proiectelor comerciale și industriale din România.
+        </p>
+
+        <h2>Ce prevede standardul EN12845 pentru grupul de pompare?</h2>
+        <p>EN12845 impune că grupul de pompare anti-incendiu trebuie să:</p>
+        <ul>
+          <li>Fie dimensionat pentru debitul și presiunea sistemului de stingere</li>
+          <li>Includă o pompă jockey (de menținere presiune) care să compenseze pierderile minore fără a porni pompa principală</li>
+          <li>Aibă o sursă de alimentare electrică de rezervă sau o pompă diesel autonomă</li>
+          <li>Fie echipat cu un tablou de comandă dedicat, cu testare periodică automată</li>
+          <li>Fie testat și documentat conform procedurii din standard</li>
+        </ul>
+
+        <h2>Configurații disponibile</h2>
+
+        <h3>Configurație electrică</h3>
+        <p>
+          Include o pompă principală electrică, o pompă jockey și un tablou de comandă EN12845. Este soluția standard pentru clădiri conectate la rețeaua electrică cu alimentare de rezervă (UPS sau generator).
+        </p>
+        <p>
+          <strong>Avantaj:</strong> cost mai scăzut, întreținere simplificată.<br />
+          <strong>Limitare:</strong> dependentă de rețeaua electrică — necesită sursă de rezervă garantată.
+        </p>
+
+        <h3>Configurație diesel</h3>
+        <p>
+          Pompa principală este acționată de un motor diesel cu rezervor de combustibil propriu. Funcționează complet independent de rețeaua electrică, ceea ce o face obligatorie în locații fără alimentare de rezervă garantată sau în clădiri cu risc ridicat.
+        </p>
+        <p>
+          <strong>Avantaj:</strong> autonomie completă față de rețeaua electrică.<br />
+          <strong>Limitare:</strong> cost și complexitate mai ridicate, mentenanță periodică a motorului diesel.
+        </p>
+
+        <h3>Configurație combinată (electric + diesel)</h3>
+        <p>
+          Pompă principală electrică plus pompă diesel de rezervă. Oferă redundanță maximă și este frecvent solicitată în proiecte cu cerințe de siguranță ridicate (spitale, depozite, clădiri de înaltă importanță).
+        </p>
+
+        <h2>Componentele obligatorii ale unui grup EN12845</h2>
+        <ul>
+          <li><strong>Pompă principală</strong> — electrică sau diesel, dimensionată la parametrii sistemului</li>
+          <li><strong>Pompă jockey</strong> — menține presiunea de veghe și detectează pierderile</li>
+          <li><strong>Tablou de comandă dedicat</strong> — conform EN12845, cu automat de testare periodică</li>
+          <li><strong>Supape și racorduri</strong> — conform schemei hidraulice a sistemului</li>
+          <li><strong>Manometre și senzori</strong> — pentru monitorizarea presiunii în timp real</li>
+        </ul>
+
+        <h2>Cum alegi configurația potrivită?</h2>
+
+        <h3>Alimentarea electrică de rezervă</h3>
+        <p>
+          Dacă clădirea are generator de urgență cu transfer automat garantat, configurația electrică poate fi suficientă. Dacă nu, standardul EN12845 impune o sursă independentă — ceea ce înseamnă practic o pompă diesel.
+        </p>
+
+        <h3>Tipul sistemului de stingere</h3>
+        <p>
+          Sistemele cu sprinklere au cerințe diferite față de hidranții interiori sau sistemele deluge. Debitul și presiunea necesare influențează direct dimensionarea pompelor.
+        </p>
+
+        <h3>Categoria de risc a clădirii</h3>
+        <p>
+          EN12845 clasifică riscul în categorii LH, OH și HH. Clădirile cu risc ridicat (depozite cu substanțe inflamabile, spații industriale) necesită debite mai mari și, de regulă, redundanță mai mare.
+        </p>
+
+        <h2>Importanța testării și documentației</h2>
+        <p>
+          Un grup de pompare EN12845 nu este complet fără documentația de conformitate: fișe tehnice, rapoarte de testare, certificate de calitate ale echipamentelor. Aceste documente sunt obligatorii pentru recepția instalației și pentru asigurători.
+        </p>
+        <p>
+          ITEM Engineering livrează fiecare grup anti-incendiu complet testat, cu documentație tehnică completă conform EN12845.
+        </p>
+
+        <div class="article-cta">
+          <p><strong>Ai nevoie de un grup de pompare anti-incendiu conform EN12845?</strong></p>
+          <p>Contactează echipa noastră cu parametrii proiectului și îți pregătim o soluție certificată.</p>
+          <a class="button button-primary" href="/contact">Solicită ofertă</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

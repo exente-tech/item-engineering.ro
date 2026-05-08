@@ -1,0 +1,131 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Cât costă o stație de pompare ape uzate? Factori care influențează prețul",
+  description: "Descoperă ce factori determină prețul unei stații de pompare ape uzate: debit, tip structură, automatizare și SCADA. Ghid practic pentru ingineri și beneficiari.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/cost-statie-pompare-ape-uzate`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Ape uzate
+      </nav>
+      <p class="eyebrow">Ape uzate</p>
+      <h1 style="max-width:28ch">Cât costă o stație de pompare ape uzate? Factori care influențează prețul</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          Prețul unei stații de pompare ape uzate variază considerabil — de la câteva mii de euro pentru soluții simple, la zeci de mii pentru instalații complexe cu automatizare completă. Această variație nu este arbitrară: fiecare componentă adaugă sau reduce costul în funcție de cerințele tehnice ale proiectului.
+        </p>
+        <p>
+          Înainte de a cere o ofertă, este util să înțelegi ce influențează prețul. Astfel poți compara corect ofertele primite și evita surprizele la livrare.
+        </p>
+
+        <h2>Ce include o stație de pompare ape uzate?</h2>
+        <p>O stație completă cuprinde mai multe componente, fiecare cu costul ei:</p>
+        <ul>
+          <li><strong>Grupul de pompare</strong> — una sau mai multe pompe submersibile, configurate pentru debitul și înălțimea de pompare necesare</li>
+          <li><strong>Structura</strong> — cămin prefabricat subteran (fibră de sticlă sau beton triplu-strat) sau structură supraterană</li>
+          <li><strong>Tabloul de comandă</strong> — cu protecții electrice, automatizare și funcționare autonomă</li>
+          <li><strong>Senzorii</strong> — nivel, presiune, debit</li>
+          <li><strong>Sistemul SCADA/GSM</strong> — opțional, pentru monitorizare și telecontrol</li>
+        </ul>
+
+        <h2>Factori principali care influențează prețul</h2>
+
+        <h3>Debitul și înălțimea de pompare</h3>
+        <p>
+          Aceștia sunt parametrii de bază ai oricărui sistem de pompare. Un debit mai mare necesită pompe mai puternice și conducte cu diametru mai mare — ceea ce crește direct costul echipamentelor. Înălțimea manometrică totală (HMT) determină presiunea la care trebuie să lucreze pompele.
+        </p>
+
+        <h3>Tipul apei: WW vs. SSWW</h3>
+        <p>
+          Apa uzată standard (WW) se pompează cu pompe convenționale. Apa cu conținut ridicat de solide (SSWW — Sewage with Solids) necesită pompe cu roți speciale anti-blocare și, adesea, un sistem de separare a solidelor înainte de pompare. Configurația SSWW este sensibil mai scumpă, dar reduce semnificativ costurile de mentenanță pe termen lung.
+        </p>
+
+        <h3>Tipul structurii</h3>
+        <p>
+          Căminul prefabricat subteran este soluția cea mai utilizată în spații urbane. Costul variază în funcție de diametru, adâncime și material (fibră de sticlă vs. beton). O stație supraterană poate fi mai ieftină ca structură, dar necesită un spațiu tehnic adecvat și lucrări civile suplimentare.
+        </p>
+
+        <h3>Nivelul de automatizare</h3>
+        <p>
+          Un tablou de comandă de bază cu protecții electrice și funcționare automată pe flotoare este soluția minimă. Un tablou cu PLC, ecran HMI, funcții avansate de protecție și comunicație la distanță adaugă cost, dar reduce semnificativ intervențiile umane și riscul de avarii.
+        </p>
+
+        <h3>Monitorizare SCADA și GSM</h3>
+        <p>
+          Integrarea unui modul GSM pentru alertare și telecontrol sau a unui sistem SCADA complet reprezintă un cost suplimentar, dar oferă vizibilitate în timp real asupra funcționării stației. Pentru stații în locații izolate sau cu personal de operare limitat, această investiție se amortizează rapid.
+        </p>
+
+        <h2>Costuri orientative</h2>
+        <p>
+          Datorită variabilității ridicate a parametrilor, nu există prețuri standard publicate. O stație simplă, cu o singură pompă, cămin prefabricat și automatizare de bază poate porni de la 8.000–15.000 EUR. Stațiile complexe, cu configurație SSWW, pompe duble, SCADA și GSM, pot depăși 40.000–60.000 EUR.
+        </p>
+        <p>
+          Aceste cifre sunt orientative și depind de specificațiile exacte, de producătorul echipamentelor și de condițiile de livrare și montaj.
+        </p>
+
+        <h2>Cum obții o ofertă corectă?</h2>
+        <p>Pentru o ofertă precisă, este necesar să furnizezi cel puțin:</p>
+        <ul>
+          <li>Debitul necesar (m³/h sau l/s)</li>
+          <li>Înălțimea de pompare (m)</li>
+          <li>Tipul apei uzate (cu sau fără solide)</li>
+          <li>Condițiile de instalare (subteran, suprateran, spațiu disponibil)</li>
+          <li>Cerințele de automatizare și monitorizare</li>
+        </ul>
+        <p>
+          Cu aceste date, un furnizor serios poate oferi o soluție tehnică completă și un preț real — nu o estimare generică.
+        </p>
+
+        <div class="article-cta">
+          <p><strong>Ai un proiect de stație de pompare ape uzate?</strong></p>
+          <p>Trimite-ne parametrii tehnici și îți pregătim o ofertă detaliată, fără costuri de consultanță.</p>
+          <a class="button button-primary" href="/contact">Solicită ofertă</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

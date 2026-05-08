@@ -1,0 +1,128 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Invertor de frecvență la pompe: economii energetice și avantaje operaționale",
+  description: "Cum reduce un invertor de frecvență consumul energetic al pompelor și ce alte avantaje aduce: pornire lină, protecție motor, durată de viață mai mare. Ghid tehnic.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/invertor-frecventa-pompe-economii-energetice`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Automatizări
+      </nav>
+      <p class="eyebrow">Automatizări</p>
+      <h1 style="max-width:30ch">Invertor de frecvență la pompe: economii energetice și avantaje operaționale</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          Invertorul de frecvență — cunoscut și ca VFD (Variable Frequency Drive) sau variator de turație — este una dintre cele mai eficiente investiții pe care le poți face pentru un sistem de pompare. Reduce consumul de energie, prelungește durata de viață a echipamentelor și elimină șocurile hidraulice. Iată cum funcționează și ce beneficii concrete aduce.
+        </p>
+
+        <h2>Ce este un invertor de frecvență?</h2>
+        <p>
+          Un invertor de frecvență este un dispozitiv electronic care controlează turația unui motor electric prin modificarea frecvenței curentului de alimentare. Dacă rețeaua electrică furnizează curent la 50 Hz (turație standard), invertorul poate reduce frecvența la 30 Hz — și implicit turația motorului — sau o poate crește dacă este necesar.
+        </p>
+        <p>
+          Aplicat la o pompă, acest lucru înseamnă că debitul și presiunea pot fi reglate continuu, în loc să fie fixe la valoarea maximă.
+        </p>
+
+        <h2>Cum funcționează cu pompele?</h2>
+        <p>
+          Într-un sistem clasic fără invertor, pompa funcționează la turație maximă tot timpul — fie că ai nevoie de debit maxim, fie că ai nevoie de 20% din el. Surplusul de presiune este risipit prin vane de reglaj sau pompa pornește și oprește frecvent.
+        </p>
+        <p>
+          Cu invertor, un senzor de presiune comunică în timp real cu invertorul: dacă presiunea este prea mare, invertorul reduce turația pompei; dacă consumul crește și presiunea scade, invertorul accelerează pompa. Rezultatul este presiune constantă la ieșire, cu energie consumată strict cât este necesar.
+        </p>
+
+        <h2>Economii energetice concrete</h2>
+        <p>
+          Relația dintre turația pompei și puterea consumată urmează legea cubică a afinității: dacă reduci turația la 80% din valoarea nominală, puterea consumată scade la aproximativ 51% (0,8³ = 0,512).
+        </p>
+        <p>
+          În practică, un sistem de pompare care funcționează la turație variabilă în loc de turație fixă poate economisi 20–40% din energia electrică consumată, în funcție de profilul de consum. Pentru sisteme mari sau cu funcționare continuă, amortizarea investiției în invertor se face în 1–3 ani.
+        </p>
+
+        <h2>Avantaje operaționale dincolo de economii</h2>
+
+        <h3>Pornire și oprire lină</h3>
+        <p>
+          La pornirea directă, motorul electric atrage un curent de 5–7 ori mai mare decât curentul nominal — ceea ce provoacă șocuri mecanice și hidraulice. Invertorul pornește motorul progresiv, eliminând aceste șocuri și reducând uzura mecanică.
+        </p>
+
+        <h3>Protecție avansată a motorului</h3>
+        <p>
+          Invertoarele moderne includ protecții integrate pentru supracurent, subtensiune, supratensiune, supraîncălzire și funcționare pe gol. Acestea protejează motorul mai eficient decât releele termice clasice.
+        </p>
+
+        <h3>Durată de viață mai mare</h3>
+        <p>
+          Eliminarea pornirilor bruște și a funcționării la sarcini extreme reduce uzura mecanică a pompei și a motorului. Rulmenții, garniturile și etanșările rezistă mai mult.
+        </p>
+
+        <h3>Reducerea șocurilor de presiune (lovitură de berbec)</h3>
+        <p>
+          Pornirea și oprirea bruscă a pompelor generează unde de presiune în conductă — cunoscute ca lovitură de berbec. Invertorul elimină acest fenomen prin accelerare și decelerare controlată, protejând conductele și armăturile.
+        </p>
+
+        <h2>Când merită investiția?</h2>
+        <p>Invertorul de frecvență aduce cele mai mari beneficii când:</p>
+        <ul>
+          <li>Consumul variază semnificativ în timp (rețele de distribuție, clădiri)</li>
+          <li>Pompa funcționează multe ore pe zi sau continuu</li>
+          <li>Este necesară presiune constantă la variații mari de consum</li>
+          <li>Costul energiei electrice este un factor semnificativ în bugetul operațional</li>
+        </ul>
+        <p>
+          Pentru stații care funcționează intermitent sau la debit constant, beneficiile sunt mai mici — dar avantajele legate de pornire lină și protecția motorului rămân valabile indiferent.
+        </p>
+
+        <div class="article-cta">
+          <p><strong>Vrei să integrezi un invertor de frecvență în sistemul tău de pompare?</strong></p>
+          <p>ITEM Engineering include invertoare de frecvență ca standard în stațiile de ridicare presiune. Contactează-ne pentru detalii.</p>
+          <a class="button button-primary" href="/contact">Solicită consultanță</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

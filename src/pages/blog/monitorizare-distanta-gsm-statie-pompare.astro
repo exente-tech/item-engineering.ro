@@ -1,0 +1,135 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Monitorizare la distanță GSM pentru stații de pompare: cum funcționează",
+  description: "Cum funcționează monitorizarea la distanță prin GSM pentru stații de pompare: date transmise, tipuri de alarme, diferența față de SCADA și cerințe tehnice de implementare.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/monitorizare-distanta-gsm-statie-pompare`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Automatizări
+      </nav>
+      <p class="eyebrow">Automatizări</p>
+      <h1 style="max-width:28ch">Monitorizare la distanță GSM pentru stații de pompare: cum funcționează</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          O stație de pompare care funcționează autonom, fără personal permanent, pune o întrebare simplă: cum știi că totul funcționează corect? Răspunsul pentru multe instalații este monitorizarea la distanță prin GSM — o soluție accesibilă, fiabilă și ușor de implementat, care transformă o instalație „oarbă" într-una cu vizibilitate permanentă.
+        </p>
+
+        <h2>Cum funcționează monitorizarea la distanță?</h2>
+        <p>
+          Tabloul de comandă al stației de pompare include un modul de comunicație GSM — similar unui telefon mobil industrial — cu o cartelă SIM de date. Acest modul se conectează la rețeaua mobilă și transmite date către un server sau direct către operatori, prin SMS, e-mail sau o aplicație dedicată.
+        </p>
+        <p>
+          Datele provin de la senzorii și controllerele din tablou: nivelul apei, starea pompelor, presiunea, alarmele active. Modulul GSM le colectează și le transmite periodic sau în timp real, în funcție de configurație.
+        </p>
+
+        <h2>Ce informații primești în timp real?</h2>
+        <ul>
+          <li><strong>Starea pompelor</strong> — pornit, oprit, defect</li>
+          <li><strong>Nivelul apei</strong> în cămin sau rezervor — cu praguri de alarmă configurabile</li>
+          <li><strong>Alarmele active</strong> — suprasarcină, funcționare pe gol, nivel critic, defect senzor</li>
+          <li><strong>Numărul de porniri</strong> și orele de funcționare ale fiecărei pompe</li>
+          <li><strong>Presiunea</strong> la ieșire (pentru stații de ridicare presiune)</li>
+          <li><strong>Starea alimentării electrice</strong> — prezența tensiunii, comutarea pe generator</li>
+        </ul>
+
+        <h2>Cum se transmit alarmele?</h2>
+        <p>Există mai multe modalități, de obicei configurabile:</p>
+        <ul>
+          <li><strong>SMS</strong> — mesaj text trimis la unul sau mai multe numere de telefon. Simplu, direct, funcționează și fără internet.</li>
+          <li><strong>Notificare push</strong> — prin aplicație mobilă, dacă modulul GSM se conectează la un server cloud.</li>
+          <li><strong>E-mail</strong> — util pentru notificarea mai multor persoane simultan sau pentru arhivarea alarmelor.</li>
+          <li><strong>Apel vocal automat</strong> — unele module pot genera un apel vocal în caz de alarmă critică.</li>
+        </ul>
+        <p>
+          Alarmele pot fi filtrate pe severitate — de exemplu, doar avariile critice trimit SMS, în timp ce evenimentele minore sunt doar înregistrate în log.
+        </p>
+
+        <h2>Diferența față de SCADA</h2>
+        <p>
+          Monitorizarea GSM este o soluție de alertare și vizibilitate de bază. SCADA este un nivel superior care adaugă:
+        </p>
+        <ul>
+          <li>Date continue și trend-uri istorice, nu doar alarme punctuale</li>
+          <li>Interfață grafică cu schema instalației (mimică)</li>
+          <li>Control remote al parametrilor și comenzilor</li>
+          <li>Rapoarte automate și analiză avansată</li>
+          <li>Posibilitate de integrare cu sisteme terțe</li>
+        </ul>
+        <p>
+          Pentru o stație simplă sau izolată, GSM este suficient. Pentru o rețea de stații sau pentru instalații critice, SCADA oferă vizibilitate și control semnificativ mai avansate.
+        </p>
+
+        <h2>Cerințe tehnice pentru implementare</h2>
+        <ul>
+          <li><strong>Acoperire GSM/4G</strong> la locul instalației — verificați semnalul înainte de proiectare</li>
+          <li><strong>Cartelă SIM de date</strong> cu roaming dacă este cazul — consumul de date este redus (câteva MB/lună pentru o stație simplă)</li>
+          <li><strong>Alimentare continuă</strong> a modulului GSM — inclusă de obicei în tabloul de comandă</li>
+          <li><strong>Configurarea pragurilor de alarmă</strong> — adaptate la parametrii normali ai instalației</li>
+          <li><strong>Lista de destinatari</strong> — numerele de telefon sau adresele de e-mail care primesc notificările</li>
+        </ul>
+        <p>
+          ITEM Engineering integrează monitorizarea GSM ca opțiune standard în toate tablourile de comandă livrate. Configurarea se face în fabrică, înainte de livrare.
+        </p>
+
+        <h2>Beneficii concrete pentru operatori</h2>
+        <ul>
+          <li>Intervenție rapidă — afli imediat când ceva nu funcționează, indiferent unde ești</li>
+          <li>Reducerea deplasărilor de verificare la instalații care funcționează normal</li>
+          <li>Documentarea automată a evenimentelor — util pentru rapoarte și audit</li>
+          <li>Liniște operațională — știi că vei fi alertat dacă apare o problemă</li>
+        </ul>
+
+        <div class="article-cta">
+          <p><strong>Vrei să adaugi monitorizare la distanță la stația ta de pompare?</strong></p>
+          <p>ITEM Engineering configurează și integrează module GSM în tablouri noi sau existente. Contactează-ne pentru detalii.</p>
+          <a class="button button-primary" href="/contact">Solicită consultanță</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

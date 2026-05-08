@@ -1,0 +1,141 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Stație containerizată vs. subterană: comparație pentru proiectul tău",
+  description: "Compari o stație de pompare containerizată cu una subterană? Descoperă avantajele, limitele și criteriile de decizie pentru fiecare tip de instalație.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/statie-containerizata-vs-subterana`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Containerizat
+      </nav>
+      <p class="eyebrow">Containerizat</p>
+      <h1 style="max-width:28ch">Stație containerizată vs. subterană: comparație pentru proiectul tău</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          Când vine vorba de amplasarea unei stații de pompare, una dintre primele decizii este forma structurii: subterană (cămin prefabricat) sau containerizată (supraterană, livrată complet echipată). Ambele soluții sunt mature, fiabile și utilizate pe scară largă — dar fiecare se potrivește unor condiții diferite.
+        </p>
+
+        <h2>Stația subterană — cămin prefabricat</h2>
+        <p>
+          Structura subterană este îngropată complet în pământ. Accesul la echipamente se face prin unul sau mai multe capace de vizitare la suprafață. Căminul este fabricat din fibră de sticlă sau beton triplu-strat, rezistent la presiunea solului și la umiditate.
+        </p>
+
+        <h3>Avantaje</h3>
+        <ul>
+          <li>Nu ocupă suprafață la nivelul solului — ideală pentru zone urbane, parcări, spații verzi</li>
+          <li>Echipamentele sunt ferite de variațiile de temperatură exterioară</li>
+          <li>Impact vizual zero — nu necesită autorizații speciale de amplasare</li>
+          <li>Soluție standard, bine documentată și ușor de reglementat</li>
+        </ul>
+
+        <h3>Limitări</h3>
+        <ul>
+          <li>Necesită lucrări de excavare și montaj — timp de execuție mai lung</li>
+          <li>Accesul pentru mentenanță este mai dificil față de o instalație supraterană</li>
+          <li>Poate fi limitată de nivelul apei freatice sau de tipul solului</li>
+        </ul>
+
+        <h3>Când este potrivită</h3>
+        <p>
+          Stația subterană este soluția de referință pentru proiecte urbane și suburbane, rețele de canalizare, proiecte de infrastructură unde spațiul suprateran este limitat sau vizibilitatea stației este un criteriu.
+        </p>
+
+        <h2>Stația containerizată</h2>
+        <p>
+          Stația containerizată este livrată complet echipată, cablată și testată, într-un container metalic izolat termic și acustic. Se amplasează direct pe o fundație simplă și se racordează la conductele existente. Nu necesită lucrări de construcție semnificative.
+        </p>
+
+        <h3>Avantaje</h3>
+        <ul>
+          <li>Timp de implementare semnificativ redus — de la comandă la punere în funcțiune</li>
+          <li>Nu necesită excavare sau lucrări civile majore</li>
+          <li>Acces facil la echipamente — ușile containerului permit intervenții rapide</li>
+          <li>Relocabilă — poate fi mutată dacă cerințele proiectului se schimbă</li>
+          <li>Testată complet în fabrică înainte de livrare</li>
+        </ul>
+
+        <h3>Limitări</h3>
+        <ul>
+          <li>Ocupă suprafață la nivelul solului — necesită spațiu disponibil</li>
+          <li>Poate necesita autorizație de amplasare sau aviz estetic în zone urbane protejate</li>
+          <li>Izolarea termică trebuie dimensionată corect pentru condițiile climatice locale</li>
+        </ul>
+
+        <h3>Când este potrivită</h3>
+        <p>
+          Stația containerizată este soluția preferată pentru proiecte cu termen scurt, locații industriale cu spațiu disponibil, proiecte temporare sau situații în care minimizarea lucrărilor civile este o prioritate.
+        </p>
+
+        <h2>Comparație directă</h2>
+        <ul>
+          <li><strong>Timp de implementare:</strong> Container &lt; Subterană</li>
+          <li><strong>Lucrări civile necesare:</strong> Container minim / Subterană excavare + montaj</li>
+          <li><strong>Ocupare teren suprateran:</strong> Container da / Subterană nu</li>
+          <li><strong>Acces pentru mentenanță:</strong> Container facil / Subterană prin capace</li>
+          <li><strong>Relocabilitate:</strong> Container da / Subterană nu</li>
+          <li><strong>Impact vizual:</strong> Container vizibil / Subterană invizibil</li>
+        </ul>
+
+        <h2>Factori de decizie</h2>
+        <p>Alegerea între cele două soluții depinde de:</p>
+        <ul>
+          <li><strong>Termenul de execuție</strong> — dacă proiectul este urgent, containerul câștigă</li>
+          <li><strong>Spațiul disponibil</strong> — dacă terenul suprateran este limitat sau valoros, subterana este mai potrivită</li>
+          <li><strong>Natura proiectului</strong> — permanent vs. temporar sau relocabil</li>
+          <li><strong>Cerințele de autorizare</strong> — unele zone impun soluții invizibile</li>
+          <li><strong>Bugetul de lucrări civile</strong> — containerul elimină o parte semnificativă din costurile de construcție</li>
+        </ul>
+
+        <div class="article-cta">
+          <p><strong>Nu ești sigur ce tip de stație se potrivește proiectului tău?</strong></p>
+          <p>Contactează echipa ITEM Engineering și analizăm împreună cerințele tehnice și de amplasare.</p>
+          <a class="button button-primary" href="/contact">Solicită consultanță</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>

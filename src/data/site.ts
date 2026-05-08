@@ -359,9 +359,64 @@ export const siteData = {
     intro: "Articole pentru ingineri și manageri de proiect despre sisteme de pompare și automatizare industrială.",
     articles: [
       {
+        slug: "cost-statie-pompare-ape-uzate",
+        title: "Cât costă o stație de pompare ape uzate? Factori care influențează prețul",
+        description: "Descoperă ce factori determină prețul unei stații de pompare ape uzate: debit, tip structură, automatizare și SCADA. Ghid practic pentru ingineri și beneficiari.",
+        category: "Ape uzate",
+        date: "2026-05-07"
+      },
+      {
+        slug: "grup-pompare-anti-incendiu-en12845",
+        title: "Grup de pompare anti-incendiu EN12845: cum alegi configurația potrivită",
+        description: "Ghid complet pentru alegerea grupului de pompare anti-incendiu conform EN12845: configurații electrice, diesel și combinate, componente obligatorii și criterii de selecție.",
+        category: "Anti-incendiu",
+        date: "2026-05-07"
+      },
+      {
+        slug: "statie-ridicare-presiune-cand-ai-nevoie",
+        title: "Stație de ridicare presiune: când ai nevoie și ce tip să alegi",
+        description: "Când este necesară o stație de ridicare presiune și cum alegi între variantele supraterană, subterană și containerizată. Ghid tehnic practic.",
+        category: "Ridicare presiune",
+        date: "2026-05-07"
+      },
+      {
+        slug: "statie-containerizata-vs-subterana",
+        title: "Stație containerizată vs. subterană: comparație pentru proiectul tău",
+        description: "Compari o stație de pompare containerizată cu una subterană? Descoperă avantajele, limitele și criteriile de decizie pentru fiecare tip de instalație.",
+        category: "Containerizat",
+        date: "2026-05-07"
+      },
+      {
+        slug: "ce-este-scada-sisteme-pompare",
+        title: "Ce este SCADA și de ce contează pentru o stație de pompare",
+        description: "Explică ce este un sistem SCADA, cum funcționează în stațiile de pompare, ce parametri monitorizează și când este esențial față de o simplă monitorizare GSM.",
+        category: "Automatizări",
+        date: "2026-05-07"
+      },
+      {
+        slug: "invertor-frecventa-pompe-economii-energetice",
+        title: "Invertor de frecvență la pompe: economii energetice și avantaje operaționale",
+        description: "Cum reduce un invertor de frecvență consumul energetic al pompelor și ce alte avantaje aduce: pornire lină, protecție motor, durată de viață mai mare.",
+        category: "Automatizări",
+        date: "2026-05-07"
+      },
+      {
+        slug: "mentenanta-statie-pompare",
+        title: "Mentenanța stației de pompare: ce trebuie verificat și la ce intervale",
+        description: "Ghid practic de mentenanță preventivă pentru stații de pompare: verificări zilnice, lunare și anuale, semne de uzură și rolul automatizării în reducerea intervențiilor.",
+        category: "Mentenanță",
+        date: "2026-05-07"
+      },
+      {
+        slug: "monitorizare-distanta-gsm-statie-pompare",
+        title: "Monitorizare la distanță GSM pentru stații de pompare: cum funcționează",
+        description: "Cum funcționează monitorizarea la distanță prin GSM pentru stații de pompare: date transmise, tipuri de alarme, diferența față de SCADA și cerințe tehnice.",
+        category: "Automatizări",
+        date: "2026-05-07"
+      },
+      {
         slug: "statie-pompare-ape-uzate",
         title: "Cum funcționează o stație de pompare ape uzate?",
-        metaTitle: "Stație de pompare ape uzate – cum funcționează și cum alegi sistemul potrivit",
         description: "Află cum funcționează o stație de pompare ape uzate, ce componente include și cum alegi soluția potrivită pentru aplicația ta.",
         category: "Ape uzate",
         date: "2026-05-04"

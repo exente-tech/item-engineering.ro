@@ -1,0 +1,137 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const siteUrl = "https://www.item-engineering.ro";
+const meta = {
+  title: "Stație de ridicare presiune: când ai nevoie și ce tip să alegi",
+  description: "Când este necesară o stație de ridicare presiune și cum alegi între variantele supraterană, subterană și containerizată. Ghid tehnic practic.",
+  datePublished: "2026-05-07",
+  url: `${siteUrl}/blog/statie-ridicare-presiune-cand-ai-nevoie`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Acasă", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blog` },
+    { "@type": "ListItem", position: 3, name: meta.title, item: meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: meta.title,
+  description: meta.description,
+  url: meta.url,
+  datePublished: meta.datePublished,
+  author: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl },
+  publisher: { "@type": "Organization", name: "ITEM Engineering", url: siteUrl }
+};
+---
+
+<MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <section class="page-hero section">
+    <div class="container">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="/blog">Blog</a> / Ridicare presiune
+      </nav>
+      <p class="eyebrow">Ridicare presiune</p>
+      <h1 style="max-width:28ch">Stație de ridicare presiune: când ai nevoie și ce tip să alegi</h1>
+      <div class="article-meta">
+        <span>7 mai 2026</span>
+        <span>·</span>
+        <span>ITEM Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight-top">
+    <div class="container">
+      <div class="article-body">
+
+        <p>
+          Presiunea apei în rețea nu este întotdeauna suficientă pentru aplicația ta. Fie că vorbim de o clădire înaltă, de o zonă de distribuție izolată sau de un proces industrial cu cerințe stricte de presiune, o stație de ridicare presiune rezolvă problema definitiv și automat.
+        </p>
+
+        <h2>Când ai nevoie de o stație de ridicare presiune?</h2>
+        <p>Cele mai frecvente situații care impun o astfel de soluție:</p>
+
+        <h3>Presiunea din rețeaua publică este insuficientă</h3>
+        <p>
+          Rețelele publice de distribuție sunt proiectate pentru presiuni standard. Dacă consumul local depășește capacitatea rețelei sau dacă zona este la capătul unui circuit, presiunea disponibilă poate fi sub minimul necesar.
+        </p>
+
+        <h3>Clădiri înalte sau cu mai multe niveluri</h3>
+        <p>
+          Fiecare etaj adaugă aproximativ 1 bar de rezistență. Clădirile cu mai mult de 5–6 etaje necesită, de regulă, o stație de ridicare presiune pentru a asigura presiunea minimă la ultimele niveluri.
+        </p>
+
+        <h3>Aplicații industriale cu presiune constantă</h3>
+        <p>
+          Procesele industriale — linii de producție, sisteme de răcire, instalații de spălare — necesită presiune constantă, indiferent de variațiile consumului. O stație cu invertor de frecvență asigură această stabilitate.
+        </p>
+
+        <h3>Rețele de irigații sau sisteme de stingere incendiu</h3>
+        <p>
+          Ambele tipuri de instalații au cerințe precise de presiune și debit. Stațiile de ridicare presiune sunt componenta centrală a acestor sisteme.
+        </p>
+
+        <h2>Tipuri de stații de ridicare presiune</h2>
+
+        <h3>Stație supraterană</h3>
+        <p>
+          Se instalează într-un spațiu tehnic existent: cameră de pompare, subsol tehnic sau container. Este soluția cea mai accesibilă ca preț și cea mai ușor de accesat pentru mentenanță. Necesită un spațiu adecvat, uscat și cu temperatură controlată.
+        </p>
+
+        <h3>Stație subterană (cămin prefabricat)</h3>
+        <p>
+          Căminul prefabricat triplu-strat se instalează îngropat, eliminând necesitatea unui spațiu tehnic suprateran. Este soluția ideală pentru zone urbane cu spațiu limitat, parcări, piețe sau alei. Accesul pentru mentenanță se face prin capacul de vizitare.
+        </p>
+
+        <h3>Stație containerizată</h3>
+        <p>
+          Livrată complet echipată și cablată într-un container metalic izolat termic și acustic. Nu necesită lucrări de construcție — se racordează direct la conductele existente. Ideală pentru proiecte cu termen scurt sau locații temporare.
+        </p>
+
+        <h2>Componentele principale ale unei stații moderne</h2>
+        <ul>
+          <li><strong>Pompe centrifuge multietaj</strong> — configurate în funcție de presiunea și debitul necesar, de obicei în paralel pentru redundanță</li>
+          <li><strong>Invertor de frecvență (VFD)</strong> — reglează turația pompelor în funcție de cererea momentană, menținând presiunea constantă și reducând consumul de energie</li>
+          <li><strong>PLC și tablou de comandă</strong> — automatizează funcționarea, protejează echipamentele și gestionează alternanța pompelor</li>
+          <li><strong>Senzori de presiune</strong> — măsoară presiunea în timp real la intrare și ieșire</li>
+          <li><strong>Vas de expansiune</strong> — amortizează variațiile de presiune și reduce ciclările pompelor</li>
+        </ul>
+
+        <h2>Cum se menține presiunea constantă?</h2>
+        <p>
+          Secretul unui sistem de ridicare presiune modern este invertorul de frecvență. Acesta modifică turația motorului pompei în funcție de presiunea măsurată de senzori. Când consumul crește, pompa accelerează; când scade, pompa încetinește. Rezultatul: presiune constantă la ieșire, indiferent de câți consumatori sunt activi.
+        </p>
+        <p>
+          Fără invertor, pompele funcționează la turație fixă și pornesc/opresc în trepte, ceea ce provoacă variații de presiune și uzează mai rapid echipamentele.
+        </p>
+
+        <h2>Ce să verifici înainte de a alege o soluție</h2>
+        <ul>
+          <li>Presiunea disponibilă la intrare (din rețea sau rezervor)</li>
+          <li>Presiunea minimă necesară la punctele de consum</li>
+          <li>Debitul maxim simultan (l/s sau m³/h)</li>
+          <li>Tipul instalației (sanitară, industrială, anti-incendiu)</li>
+          <li>Spațiul disponibil pentru instalare</li>
+          <li>Cerințele de monitorizare și telecontrol</li>
+        </ul>
+
+        <div class="article-cta">
+          <p><strong>Ai nevoie de o stație de ridicare presiune?</strong></p>
+          <p>Trimite-ne parametrii și îți propunem soluția potrivită — supraterană, subterană sau containerizată.</p>
+          <a class="button button-primary" href="/contact">Solicită consultanță</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</MainLayout>
