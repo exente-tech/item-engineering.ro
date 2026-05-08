@@ -1,13 +1,39 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 
+const siteUrl = "https://www.item-engineering.ro";
 const meta = {
   title: "Stație de pompare ape uzate – cum funcționează și cum alegi sistemul potrivit",
-  description: "Află cum funcționează o stație de pompare ape uzate, ce componente include și cum alegi soluția potrivită pentru aplicația ta."
+  description: "Află cum funcționează o stație de pompare ape uzate, ce componente include și cum alegi soluția potrivită pentru aplicația ta.",
+  datePublished: "2026-05-04",
+  url: `${siteUrl}/blog/statie-pompare-ape-uzate`
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Acasă", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${siteUrl}/blog` },
+    { "@type": "ListItem", "position": 3, "name": meta.title, "item": meta.url }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": meta.title,
+  "description": meta.description,
+  "url": meta.url,
+  "datePublished": meta.datePublished,
+  "author": { "@type": "Organization", "name": "ITEM Engineering", "url": siteUrl },
+  "publisher": { "@type": "Organization", "name": "ITEM Engineering", "url": siteUrl }
 };
 ---
 
 <MainLayout title={meta.title} description={meta.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <section class="page-hero section">
     <div class="container">
       <nav class="article-breadcrumb" aria-label="Breadcrumb">

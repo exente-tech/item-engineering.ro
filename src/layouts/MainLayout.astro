@@ -5,12 +5,14 @@ import { siteData } from "../data/site";
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogImage } = Astro.props;
 const path = Astro.url.pathname;
 const site = siteData.site;
 const canonicalUrl = new URL(path, `${site.url}/`).toString();
+const resolvedOgImage = ogImage ?? `${site.url}/images/grupuri-2.png`;
 ---
 
 <!doctype html>
@@ -26,9 +28,11 @@ const canonicalUrl = new URL(path, `${site.url}/`).toString();
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ro_RO" />
+    <meta property="og:image" content={resolvedOgImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} | ${site.name}`} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
