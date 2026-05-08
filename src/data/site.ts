@@ -33,7 +33,7 @@ export const siteData = {
   home: {
     title: "Sisteme Industriale de Pompare și Automatizare",
     description:
-      "ITEM Engineering proiectează și livrează sisteme complete pentru ape uzate, ridicare presiune și protecție la incendiu, integrate cu SCADA și monitorizare în timp real.",
+      "Proiectăm și livrăm sisteme complete de pompare pentru ape uzate, ridicare presiune și protecție la incendiu — cu automatizare SCADA și monitorizare în timp real. Furnizor România.",
     eyebrow: "ITEM Engineering",
     headline: "Sisteme Industriale de Pompare și Automatizare",
     intro:
@@ -87,7 +87,7 @@ export const siteData = {
   systems: {
     title: "Sisteme de Pompare Industriale Automatizate",
     description:
-      "Sisteme complete de pompare industrială cu automatizare, SCADA și monitorizare remote. Soluții pentru ape uzate, presiune și incendiu.",
+      "Sisteme complete de pompare industrială — ape uzate, ridicare presiune, anti-incendiu — cu automatizare, SCADA și monitorizare remote. Soluții pentru proiecte din România.",
     eyebrow: "Sisteme industriale",
     heading: "Sisteme de Pompare Industriale Automatizate",
     intro:
@@ -123,9 +123,9 @@ export const siteData = {
     ctaButton: "Solicită ofertă"
   },
   wastewater: {
-    title: "Stații de Pompare Ape Uzate",
+    title: "Stații de Pompare Ape Uzate — Sisteme Complete WW și SSWW",
     description:
-      "Sisteme de pompare pentru ape uzate cu automatizare și monitorizare SCADA. Configurații WW și SSWW pentru aplicații industriale și urbane.",
+      "Stații de pompare ape uzate subterane și supraterane, configurații WW și SSWW, cu automatizare completă și monitorizare SCADA. Proiectare și livrare în România.",
     eyebrow: "Ape uzate",
     heading: "Stații de Pompare Ape Uzate",
     intro:
@@ -160,9 +160,9 @@ export const siteData = {
     ctaButton: "Solicită ofertă"
   },
   pressure: {
-    title: "Stații de Ridicare Presiune",
+    title: "Stații de Ridicare Presiune — Supraterane, Subterane, Containerizate",
     description:
-      "Sisteme dedicate menținerii presiunii constante în rețele de distribuție. Automatizare completă și monitorizare SCADA.",
+      "Sisteme de ridicare presiune cu pompe centrifuge multietaj, invertor de frecvență și PLC. Presiune constantă indiferent de consum. ITEM Engineering, România.",
     eyebrow: "Ridicare presiune",
     heading: "Stații de Ridicare Presiune",
     intro:
@@ -201,9 +201,9 @@ export const siteData = {
     ctaButton: "Solicită ofertă"
   },
   fire: {
-    title: "Grupuri de Pompare Anti-incendiu EN12845",
+    title: "Grupuri de Pompare Anti-incendiu Conforme EN12845",
     description:
-      "Soluții conforme EN12845 pentru sisteme de stingere incendiu. Configurații electrice și diesel cu automatizare și monitorizare integrate.",
+      "Grupuri de pompare incendiu electrice și diesel, conforme EN12845, cu pompă jockey și tablou de comandă dedicat. Livrare completă și punere în funcțiune în România.",
     eyebrow: "Anti-incendiu EN12845",
     heading: "Grupuri de Pompare Anti-incendiu conforme EN12845",
     intro:
@@ -242,9 +242,9 @@ export const siteData = {
     ctaButton: "Solicită ofertă"
   },
   container: {
-    title: "Stații Containerizate Complet Echipate",
+    title: "Stații Containerizate de Pompare — Livrare Completă, Instalare Rapidă",
     description:
-      "Soluții de pompare livrate în containere prefabricate, pregătite pentru instalare rapidă cu integrare SCADA inclusă.",
+      "Stații de pompare livrate în container complet echipat și testat — ridicare presiune sau anti-incendiu. Instalare rapidă fără lucrări majore de construcție.",
     eyebrow: "Containerizat",
     heading: "Stații Containerizate Complet Echipate",
     intro:
@@ -279,9 +279,9 @@ export const siteData = {
     ctaButton: "Solicită ofertă"
   },
   automation: {
-    title: "Automatizări Industriale SCADA și BMS",
+    title: "Automatizări SCADA și BMS pentru Sisteme de Pompare",
     description:
-      "Automatizare integrată în toate sistemele ITEM Engineering: SCADA, monitorizare la distanță GSM și BMS pentru control complet.",
+      "Automatizare industrială integrată: SCADA, monitorizare și telecontrol GSM, BMS. Incluse în toate sistemele ITEM Engineering — fără integratori terți.",
     eyebrow: "Automatizări",
     heading: "Automatizări Industriale SCADA și BMS",
     intro:
@@ -310,18 +310,18 @@ export const siteData = {
     ctaButton: "Solicită consultanță"
   },
   projects: {
-    title: "Proiecte Realizate",
+    title: "Proiecte Realizate — Sisteme de Pompare și Automatizare",
     description:
-      "Experiența ITEM Engineering: sisteme de pompare și automatizare implementate pentru aplicații industriale și urbane.",
+      "Portofoliu ITEM Engineering: sisteme de pompare ape uzate, ridicare presiune și anti-incendiu implementate în proiecte industriale și urbane din România.",
     eyebrow: "Portofoliu",
     heading: "Proiecte realizate",
     intro:
       "Experiența noastră include implementarea de sisteme complete pentru diverse aplicații industriale și urbane."
   },
   about: {
-    title: "Despre ITEM Engineering",
+    title: "Despre ITEM Engineering — Furnizor Sisteme de Pompare România",
     description:
-      "ITEM Engineering — specializată în proiectarea și implementarea sistemelor industriale de pompare și automatizare.",
+      "ITEM Engineering proiectează și implementează sisteme industriale de pompare și automatizare în România. Soluții complete, testate, cu integrare SCADA inclusă.",
     eyebrow: "Compania",
     heading: "Despre ITEM Engineering",
     intro:
@@ -338,9 +338,9 @@ export const siteData = {
     ]
   },
   contact: {
-    title: "Contact ITEM Engineering",
+    title: "Contact — ITEM Engineering",
     description:
-      "Contactează ITEM Engineering pentru o ofertă personalizată pentru sisteme de pompare și automatizare industrială.",
+      "Solicită o ofertă pentru sisteme de pompare sau automatizare industrială. ITEM Engineering, București — răspundem rapid la orice cerere tehnică.",
     eyebrow: "Contact",
     heading: "Contactează echipa noastră",
     intro:
@@ -351,9 +351,9 @@ export const siteData = {
     }
   },
   blog: {
-    title: "Blog — Sisteme de pompare și automatizare",
+    title: "Blog Tehnic — Sisteme de Pompare și Automatizare Industrială",
     description:
-      "Articole tehnice despre sisteme de pompare industrială, automatizare SCADA și alegerea soluției potrivite.",
+      "Ghiduri și articole tehnice despre stații de pompare, automatizare SCADA și alegerea soluției potrivite — pentru ingineri și manageri de proiect din România.",
     eyebrow: "Blog",
     heading: "Resurse tehnice",
     intro: "Articole pentru ingineri și manageri de proiect despre sisteme de pompare și automatizare industrială.",
